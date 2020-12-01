@@ -14,6 +14,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/robbiehanson/CocoaAsyncSocket", from: "7.6.4"),
         .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack", from: "3.7.0")
     ],
     targets: [
@@ -22,6 +23,7 @@ let package = Package(
         .target(
             name: "QRadarLumberjack",
             dependencies: [
+                .product(name: "CocoaAsyncSocket", package: "CocoaAsyncSocket"),
                 .product(name: "CocoaLumberjack", package: "CocoaLumberjack"),
                 .product(name: "CocoaLumberjackSwift", package: "CocoaLumberjack")
             ]),
