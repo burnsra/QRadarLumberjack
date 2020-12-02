@@ -29,7 +29,7 @@ public class QRadarLumberjack: DDAbstractLogger, GCDAsyncSocketDelegate, GCDAsyn
         do {
             try tcpSocket?.connect(toHost: host, onPort: port)
         } catch let e {
-            print("[QRadarLumberjack] Error connecting QRadarLumberjack (\(e.localizedDescription))")
+            NSLog("[QRadarLumberjack] Error connecting QRadarLumberjack (\(e.localizedDescription))")
         }
 
     }
