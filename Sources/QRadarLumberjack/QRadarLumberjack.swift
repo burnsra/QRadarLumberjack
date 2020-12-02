@@ -51,7 +51,7 @@ public class QRadarLumberjack: DDAbstractLogger, GCDAsyncSocketDelegate, GCDAsyn
     private func formatMessage(_ logMessage: DDLogMessage) -> String {
         let msg = logMessage.message.trimmingCharacters(in: .newlines)
         let timestamp = dateFormatter.string(from: logMessage.timestamp)
-        return "\(timestamp) \(ProcessInfo().environment["NSLoggerViewerHost"] ?? "localhost") \(programName) \(msg)"
+        return "\(timestamp) \(Host.current().localizedName) \(programName) \(msg)"
     }
 
     @objc(logMessage:)
